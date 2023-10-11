@@ -5,7 +5,9 @@ import socket
 
 HOST = "127.0.0.1"
 PORT = 22222
+print(f"Local host: {socket.gethostname()}")
 
+# socket.socket() supports context manager type!
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
